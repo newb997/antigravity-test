@@ -4,26 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Interactive Experience</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Portfolio | Minimalist Experience</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="bg-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-    </div>
-
     <nav>
         <div class="container nav-container">
-            <a href="#" class="logo">PORTFOLIO</a>
+            <a href="#" class="logo">Portfolio</a>
             <div class="nav-links">
-                <a href="#hero">Home</a>
+                <a href="#hero">Overview</a>
                 <a href="#about">About</a>
-                <a href="#projects">Projects</a>
+                <a href="#projects">Work</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -33,61 +25,41 @@
         <section id="hero">
             <canvas id="particle-canvas"></canvas>
             <div class="hero-content">
-                <p style="color: var(--accent-primary); letter-spacing: 5px; margin-bottom: 1rem;">CREATIVE DEVELOPER
-                </p>
-                <h1 style="font-size: 4rem; display: none;">HELLO WORLD</h1> <!-- Fallback/SEO -->
+                <h1 style="display: none;">Portfolio</h1>
+                <p class="section-sub" style="margin-top: 200px; opacity: 0.6;">Design meets innovation.</p>
             </div>
         </section>
 
         <section id="about" class="container">
-            <div class="glass-card">
-                <h2>About Me</h2>
-                <p>안녕하세요! 인터랙티브한 웹 경험을 창조하는 개발자입니다. 최신 웹 기술을 활용하여 사용자에게 잊지 못할 경험을 선사하는 것을 즐깁니다.</p>
-                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <span
-                        style="background: rgba(0,229,255,0.1); color: var(--accent-primary); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem;">JAVASCRIPT</span>
-                    <span
-                        style="background: rgba(255,0,127,0.1); color: var(--accent-secondary); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem;">CSS
-                        ANIMATION</span>
-                    <span
-                        style="background: rgba(112,0,255,0.1); color: var(--accent-tertiary); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem;">CANVAS
-                        API</span>
-                </div>
-            </div>
+            <h2>About</h2>
+            <p class="section-sub">단순함이 궁극의 정교함입니다.<br>Apple의 철학을 닮은 깔끔하고 직관적인 웹 경험을 지향합니다.</p>
         </section>
 
         <section id="projects" class="container">
-            <h2>Selected Work</h2>
+            <h2 style="margin-bottom: 60px;">Work</h2>
             <div class="projects-grid">
-                <div class="glass-card project-card">
-                    <h3>Particle Engine</h3>
-                    <p>커스텀 캔버스 엔진을 활용한 고성능 파티클 시스템 구현 프로젝트입니다.</p>
+                <div class="project-card">
+                    <h3>Swift UI</h3>
+                    <p>미적 완결성을 추구하는 인터페이스 제작.</p>
                 </div>
-                <div class="glass-card project-card">
-                    <h3>Glass UI Kit</h3>
-                    <p>현대적인 글래스모피즘 디자인 가이드를 적용한 UI 컴포넌트 라이브러리입니다.</p>
-                </div>
-                <div class="glass-card project-card">
-                    <h3>3D Interaction</h3>
-                    <p>WebGL과 Canvas를 결합한 깊이감 있는 웹 인터랙션 연구입니다.</p>
+                <div class="project-card">
+                    <h3>Precision</h3>
+                    <p>0.1px의 오차도 허용하지 않는 정교한 레이아웃.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="container" style="text-align: center;">
-            <div class="glass-card">
-                <h2>Let's Talk</h2>
-                <p>새로운 프로젝트 제안이나 협업 문의는 언제든 환영합니다.</p>
-                <a href="mailto:hello@example.com"
-                    style="display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem; background: var(--accent-primary); color: #000; text-decoration: none; font-weight: 700; border-radius: 12px; transition: transform 0.3s ease;">Say
-                    Hello</a>
-            </div>
+        <section id="contact" class="container">
+            <h2>Connect</h2>
+            <p class="section-sub">새로운 가능성을 위한 대화는 언제나 열려있습니다.</p>
+            <a href="mailto:hello@apple.style" class="cta-button">Say Hello</a>
         </section>
     </main>
 
-    <footer
-        style="padding: 4rem 0; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.8rem;">
-        &copy; 2026 Developer Portfolio. All rights reserved.
+    <footer style="padding: 100px 0 40px; text-align: center; color: var(--text-secondary); font-size: 12px;">
+        <div class="container">
+            <p>Copyright © 2026 Developer Portfolio. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- Scripts -->
