@@ -8,7 +8,8 @@
     <meta http-equiv="Expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Minimalist Experience</title>
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1.2">
 </head>
 
 <body>
@@ -34,20 +35,85 @@
         </section>
 
         <section id="about" class="container">
-            <h2>About</h2>
-            <p class="section-sub">단순함이 궁극의 정교함입니다.<br>Apple의 철학을 닮은 깔끔하고 직관적인 웹 경험을 지향합니다.</p>
+            <h2 class="reveal">About</h2>
+            <p class="section-sub reveal">단순함이 궁극의 정교함입니다.<br>Apple의 철학을 닮은 깔끔하고 직관적인 웹 경험을 지향합니다.</p>
+
+            <div class="tech-stack grid-3">
+                <div class="tech-item reveal">
+                    <i class="fab fa-js-square"></i>
+                    <h4>JavaScript</h4>
+                    <p>ES6+, 비동기 프로그래밍, Canvas API 활용 인터랙션 구현</p>
+                </div>
+                <div class="tech-item reveal">
+                    <i class="fab fa-html5"></i>
+                    <h4>HTML5 / CSS3</h4>
+                    <p>시맨틱 마크업, Flexbox/Grid, 고성능 CSS 애니메이션</p>
+                </div>
+                <div class="tech-item reveal">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Vite / GSAP</h4>
+                    <p>고성능 빌드 도구 및 고난도 스크롤 애니메이션 최적화</p>
+                </div>
+                <div class="tech-item reveal">
+                    <i class="fab fa-git-alt"></i>
+                    <h4>Git / GitHub</h4>
+                    <p>브랜치 전략 기반의 협업 및 자동화 배포 프로세스 구축</p>
+                </div>
+                <div class="tech-item reveal">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Responsive</h4>
+                    <p>다양한 기기 환경을 고려한 모바일 퍼스트 반응형 레이아웃</p>
+                </div>
+                <div class="tech-item reveal">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>UI/UX Design</h4>
+                    <p>사용자 중심의 미니멀 디자인 및 인터랙티브 경험 설계</p>
+                </div>
+            </div>
         </section>
 
         <section id="projects" class="container">
-            <h2 style="margin-bottom: 60px;">Work</h2>
+            <h2 class="reveal" style="margin-bottom: 60px;">Selected Works</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Swift UI</h3>
-                    <p>미적 완결성을 추구하는 인터페이스 제작.</p>
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                            alt="Swift UI Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Swift UI Kit</h3>
+                        <p>애플 디자인 가이드를 준수하는 정밀한 UI 컴포넌트 라이브러리 제작.</p>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Precision</h3>
-                    <p>0.1px의 오차도 허용하지 않는 정교한 레이아웃.</p>
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80"
+                            alt="Precision Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Precision Engine</h3>
+                        <p>고도의 렌더링 기술을 활용한 웹 기반 3D 물리 엔진 인터랙션 연구.</p>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80"
+                            alt="Design Lab">
+                    </div>
+                    <div class="project-info">
+                        <h3>Design Lab</h3>
+                        <p>사용자 경험을 극대화하는 미니멀리즘 인터페이스와 애니메이션 시스템 설계.</p>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1517139274689-d107a0494dfd?auto=format&fit=crop&w=800&q=80"
+                            alt="Mobile Experience">
+                    </div>
+                    <div class="project-info">
+                        <h3>Mobile First</h3>
+                        <p>모든 기기에서 완벽한 가독성과 조작감을 제공하는 차세대 웹 레이아웃.</p>
+                    </div>
                 </div>
             </div>
         </section>
