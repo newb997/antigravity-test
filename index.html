@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <meta name="description" content="A modern, glassmorphism Hello World page">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0b;
+            --text-color: #ffffff;
+            --accent-1: #ff007f;
+            --accent-2: #7000ff;
+            --accent-3: #00e5ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            perspective: 1000px; /* For 3D tilt effect */
+        }
+
+        /* Animated Background Blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 10s infinite ease-in-out alternate;
+            z-index: 0;
+        }
+
+        .blob-1 {
+            width: 450px;
+            height: 450px;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            top: -15%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 550px;
+            height: 550px;
+            background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
+            bottom: -20%;
+            right: -10%;
+            animation-delay: -5s;
+        }
+        
+        .blob-3 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, var(--accent-3), var(--accent-1));
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-duration: 15s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                transform: translate(30px, 50px) scale(1.1);
+            }
+        }
+
+        /* Glassmorphism Card */
+        .card-container {
+            z-index: 10;
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+            will-change: transform;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            padding: 5rem 7rem;
+            text-align: center;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(50px); /* Pops the card out slightly in 3D */
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.05) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            animation: shine 7s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 200%; }
+            100% { left: 200%; }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 5.5rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: translateZ(30px); /* 3D pop for text */
+        }
+
+        p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #a1a1aa;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transform: translateZ(20px);
+        }
+
+        /* Interactive element */
+        .interactive-text {
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: default;
+        }
+
+        .card-container:hover .interactive-text {
+            background: linear-gradient(90deg, var(--accent-3), var(--accent-1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: scale(1.02) translateZ(40px);
+        }
+        
+        /* Smooth fade in on load */
+        body {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animated Gradients -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Main Content -->
+    <div class="card-container" id="tilt-container">
+        <div class="card">
+            <h1 class="interactive-text">Hello, World.</h1>
+            <p>Welcome to the Future</p>
+        </div>
+    </div>
+
+    <!-- Scripts for Interaction -->
+    <script>
+        const container = document.getElementById('tilt-container');
+        
+        // 3D Tilt Effect on mousemove
+        document.addEventListener('mousemove', (e) => {
+            // Calculate mouse position relative to center of screen
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            
+            // Apply 3D rotation
+            container.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Use requestAnimationFrame for smoother reset on mouse leave window
+        document.addEventListener('mouseleave', () => {
+            container.style.transition = 'transform 0.5s ease';
+            container.style.transform = `rotateY(0deg) rotateX(0deg)`;
+            
+            // Remove transition after reset so mousemove is snappy again
+            setTimeout(() => {
+                container.style.transition = 'transform 0.1s';
+            }, 500);
+        });
+        
+        // Dynamic blob movement towards mouse (subtle effect)
+        const blobs = document.querySelectorAll('.blob');
+        document.addEventListener('mousemove', (e) => {
+            const xOffset = (e.pageX / window.innerWidth - 0.5) * 40;
+            const yOffset = (e.pageY / window.innerHeight - 0.5) * 40;
+            
+            blobs.forEach((blob, index) => {
+                // Different speed/direction per blob
+                const factor = index % 2 === 0 ? 1 : -1;
+                blob.style.transform = `translate(${xOffset * factor}px, ${yOffset * factor}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
